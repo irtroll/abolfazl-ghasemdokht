@@ -1,112 +1,127 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ابولفضل قاسم دخت</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap">
   <style>
     body {
-      font-family: 'Vazirmatn', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Vazirmatn', sans-serif;
       overflow-x: hidden;
     }
     header {
+      text-align: center;
       padding: 2rem;
-      background: linear-gradient(90deg, #000000, #333333);
       font-size: 2rem;
       font-weight: bold;
+      font-family: 'Tanha', cursive;
     }
-    nav a {
-      margin: 0 10px;
-      color: #00e0ff;
-      text-decoration: none;
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem;
     }
-    .gallery img {
-      width: 250px;
-      margin: 10px;
-      border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-    }
-    .social-icons img {
-      width: 32px;
-      margin: 0 10px;
-      vertical-align: middle;
+    .social img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(0) invert(1);
     }
     .search-box {
-      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
     }
     .search-box input {
-      padding: 10px;
-      border-radius: 10px;
+      padding: 0.5rem 1rem;
       border: none;
+      border-radius: 5px;
     }
-    .scary-img {
-      display: none;
+    .game-box {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .jump-scare {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 9999;
-      background-color: rgba(0,0,0,0.9);
+      display: none;
       justify-content: center;
       align-items: center;
+      background-color: rgba(0,0,0,0.9);
+      z-index: 9999;
     }
-    .scary-img img {
-      max-width: 80%;
-      max-height: 80%;
+    .jump-scare img {
+      width: 80%;
+      max-width: 500px;
     }
   </style>
 </head>
 <body>
   <header>ابولفضل قاسم دخت</header>
-
-  <div class="social-icons">
-    <a href="https://instagram.com/irtrol"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
-    <a href="https://t.me/lrtrol"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"></a>
-    <a href="https://github.com/irtroll"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"></a>
-    <a href="https://rubika.ir/MrWrong"><img src="https://cdn.iconscout.com/icon/free/png-256/free-rubika-3521456-2945005.png" alt="Rubika"></a>
+  <div class="social">
+    <a href="https://instagram.com/irtrol" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+    </a>
+    <a href="https://t.me/lrtrol" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+    </a>
+    <a href="https://rubika.ir/MrWrong" target="_blank">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAYFBMVEX///+hoaH8/Pzo6Oju7u7z8/Pi4uJfX1+oqKjFxcXl5eWkpKTAwMD5+fnb29vU1NS4uLjLy8vNzc3Ozs7Q0NDAwMDo6OjZ2dnBwcHJycmHh4eAgICxsbHLy8tpqWoyAAAAAXRSTlMAQObYZgAAAGFJREFUGNNjYMAEGNgYDBAAAzfRzN09HQxMDKwMDNxcHFxCQwMTAwIykZm5iYGLCwsLCQy8CgoLmDkIiBmJSZmQCEmpkU5icXh4GBkYGAAADYQCUU3kDsdAAAAAASUVORK5CYII=" alt="Rubika">
+    </a>
+    <a href="https://github.com/irtroll/Abolfazl" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+    </a>
   </div>
-
   <div class="search-box">
     <input type="text" placeholder="جستجو...">
   </div>
-
-  <h2>گالری تصاویر</h2>
-  <div class="gallery">
-    <img src="images/img1.jpg" alt="عکس اول">
-    <img src="images/img2.jpg" alt="عکس دوم">
-    <img src="images/img3.jpg" alt="عکس سوم">
-    <img src="images/img4.jpg" alt="عکس چهارم">
+  <div class="game-box">
+    <p>برای تجربه هیجان روی صفحه کلیک کن!</p>
   </div>
 
-  <div id="scaryContainer" class="scary-img">
-    <img id="scaryImage" src="" alt="ترس">
+  <div class="jump-scare" id="scare">
+    <img id="scareImage" src="" alt="ترس">
+    <audio id="scream">
+      <source id="screamSource" src="" type="audio/mp3">
+    </audio>
   </div>
-
-  <audio id="sfx1" src="sounds/scream.mp3"></audio>
-  <audio id="sfx2" src="sounds/laugh.mp3"></audio>
-  <audio id="sfx3" src="sounds/whisper.mp3"></audio>
 
   <script>
-    const sounds = ["sfx1", "sfx2", "sfx3"];
-    const images = ["images/scary1.png", "images/scary2.png"];
-    const scaryContainer = document.getElementById("scaryContainer");
-    const scaryImage = document.getElementById("scaryImage");
+    const scareImages = [
+      "data:image/png;base64,...تصویر_۱...",
+      "data:image/png;base64,...تصویر_۲...",
+      "data:image/png;base64,...تصویر_۳..."
+    ];
+    const scareSounds = [
+      "data:audio/mp3;base64,...صدا_۱...",
+      "data:audio/mp3;base64,...صدا_۲..."
+    ];
 
-    document.addEventListener("click", () => {
-      const randomSound = document.getElementById(sounds[Math.floor(Math.random() * sounds.length)]);
-      randomSound.play();
-      scaryImage.src = images[Math.floor(Math.random() * images.length)];
-      scaryContainer.style.display = "flex";
+    document.body.addEventListener('click', () => {
+      const scareDiv = document.getElementById('scare');
+      const img = document.getElementById('scareImage');
+      const sound = document.getElementById('scream');
+      const source = document.getElementById('screamSource');
+
+      const imgSrc = scareImages[Math.floor(Math.random() * scareImages.length)];
+      const sndSrc = scareSounds[Math.floor(Math.random() * scareSounds.length)];
+
+      img.src = imgSrc;
+      source.src = sndSrc;
+      sound.load();
+
+      scareDiv.style.display = 'flex';
+      sound.play();
+
       setTimeout(() => {
-        scaryContainer.style.display = "none";
-      }, 1000);
+        scareDiv.style.display = 'none';
+      }, 3000);
     });
   </script>
 </body>
