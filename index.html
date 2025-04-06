@@ -1,89 +1,111 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ابوالفضل قاسم‌دخت | بازیکن فوتبال، طراح گرافیک و تدوین‌گر">
+  <meta name="description" content="وب‌سایت رسمی ابوالفضل قاسم‌دخت - بازیکن فوتبال، طراح و تدوین‌گر">
   <title>ابوالفضل قاسم‌دخت</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Tahoma, sans-serif;
+      background: linear-gradient(to bottom right, #000000, #1a1a1a);
+      color: #fff;
       margin: 0;
-      background: #f5f5f5;
-      color: #333;
+      padding: 0;
+      overflow-x: hidden;
     }
     header {
-      background: #222;
-      color: white;
-      padding: 2rem;
+      background-color: #111;
+      padding: 20px;
       text-align: center;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
+      color: crimson;
+      box-shadow: 0 2px 10px crimson;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
+    .container {
+      padding: 20px;
     }
-    .gallery img {
-      width: 100%;
-      border-radius: 1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #ddd;
-      font-size: 0.9rem;
-    }
-    .social {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .social a {
-      color: #007bff;
+    .social-links a {
+      color: #fff;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
-      display: inline-block;
-      margin: 0 10px;
+    }
+    .search-box {
+      margin: 30px auto;
+      max-width: 400px;
+      display: flex;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .search-box button {
+      padding: 10px;
+      background: crimson;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .game-area {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .jumpscare {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .jumpscare img {
+      width: 100%;
+      max-width: 600px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ابوالفضل قاسم‌دخت</h1>
-    <p>بازیکن فوتبال | طراح گرافیک | تدوین‌گر ویدیو</p>
-  </header>
-  
-  <section>
-    <h2>درباره من</h2>
-    <p>من ابوالفضل قاسم‌دخت هستم. بازیکن فوتبال و فعال در زمینه طراحی گرافیک و تدوین ویدیو. علاقه‌مند به خلق آثار خلاقانه و با تجربه در تولید محتواهای تصویری و ویدیویی.</p>
-  </section>
-
-  <section>
-    <h2>گالری تصاویر</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="ابوالفضل - عکس ۱">
-      <img src="photo2.jpg" alt="ابوالفضل - عکس ۲">
-      <img src="photo3.jpg" alt="ابوالفضل - عکس ۳">
-      <img src="photo4.jpg" alt="ابوالفضل - عکس ۴">
+  <header>ابوالفضل قاسم‌دخت</header>
+  <div class="container">
+    <p>بازیکن فوتبال، طراح و تدوین‌گر</p>
+    <div class="social-links">
+      <a href="https://instagram.com/irtrol" target="_blank">اینستاگرام</a>
+      <a href="https://t.me/lrtrol" target="_blank">تلگرام</a>
+      <a href="https://github.com/irtroll/Abolfazl" target="_blank">گیت‌هاب</a>
+      <a href="https://rubika.ir/MrWrong" target="_blank">روبیکا</a>
     </div>
-  </section>
 
-  <section class="social">
-    <p>ارتباط با من در شبکه‌های اجتماعی:</p>
-    <a href="https://instagram.com/irtrol" target="_blank">اینستاگرام: @irtrol</a>
-    <a href="https://t.me/lrtrol" target="_blank">تلگرام: @lrtrol</a>
-  </section>
+    <div class="search-box">
+      <input type="text" placeholder="جستجو...">
+      <button onclick="alert('در حال توسعه...')">جستجو</button>
+    </div>
 
-  <footer>
-    ساخته شده توسط ابوالفضل قاسم‌دخت
-  </footer>
+    <div class="game-area">
+      <h2>بازی ترسناک شروع شد... هر کلیک یه راز!</h2>
+      <p>روی صفحه کلیک کن و ببین چی میشه!</p>
+    </div>
+  </div>
+
+  <div class="jumpscare" id="jumpscare">
+    <img src="https://i.postimg.cc/3x3QzSGq/scary.png" alt="ترس">
+  </div>
+
+  <audio id="scareSound" src="https://www.soundjay.com/human/screams/female-scream-01.mp3"></audio>
+
+  <script>
+    document.body.addEventListener("click", () => {
+      const scare = document.getElementById("jumpscare");
+      const sound = document.getElementById("scareSound");
+      scare.style.display = "flex";
+      sound.play();
+      setTimeout(() => {
+        scare.style.display = "none";
+      }, 2500);
+    });
+  </script>
 </body>
 </html>
