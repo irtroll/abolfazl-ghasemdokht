@@ -60,18 +60,13 @@
       background: #fff3cd;
       border-radius: 1rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
-    .game-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .game-box {
-      font-size: 1.2rem;
-      padding: 1rem;
-      background: #ffeeba;
-      border-radius: 1rem;
-      cursor: pointer;
-      user-select: none;
+    .game-section canvas {
+      background: #222;
+      display: block;
+      margin: 1rem auto;
+      border: 2px solid #555;
     }
   </style>
 </head>
@@ -103,9 +98,10 @@
   </section>
 
   <section class="game-section">
-    <h2>بازی کلیک کن!</h2>
-    <div class="game-box" onclick="playGame()">برای شروع بازی کلیک کن!</div>
-    <p id="game-result"></p>
+    <h2>بازی نقطه‌گیر!</h2>
+    <p>روی نقطه قرمز کلیک کن تا امتیاز بگیری!</p>
+    <canvas id="gameCanvas" width="300" height="300"></canvas>
+    <p>امتیاز: <span id="score">0</span></p>
   </section>
 
   <footer>
@@ -113,17 +109,40 @@
   </footer>
 
   <script>
-    function playGame() {
-      const messages = [
-        "تو برنده شدی!",
-        "باختی! دوباره امتحان کن",
-        "شانس با تو یار بود!",
-        "نزدیک بود ببازی!",
-        "تو خوش‌شانسی!"
-      ];
-      const result = messages[Math.floor(Math.random() * messages.length)];
-      document.getElementById("game-result").innerText = result;
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const scoreElement = document.getElementById('score');
+    let score = 0;
+
+    let dot = {
+      x: Math.random() * 280,
+      y: Math.random() * 280,
+      r: 10
+    };
+
+    function drawDot() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'red';
+      ctx.fill();
     }
+
+    canvas.addEventListener('click', function(e) {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const dist = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
+      if (dist < dot.r) {
+        score++;
+        scoreElement.innerText = score;
+        dot.x = Math.random() * (canvas.width - 20) + 10;
+        dot.y = Math.random() * (canvas.height - 20) + 10;
+        drawDot();
+      }
+    });
+
+    drawDot();
   </script>
 </body>
 </html>
