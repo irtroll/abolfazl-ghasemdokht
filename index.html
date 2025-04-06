@@ -1,55 +1,76 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Orbitron&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="وب‌سایت رسمی ابوالفضل قاسم‌دخت - بازیکن فوتبال، طراح و تدوین‌گر">
   <title>ابوالفضل قاسم‌دخت</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      font-family: Tahoma, sans-serif;
-      background: linear-gradient(to bottom right, #000000, #1a1a1a);
-      color: #fff;
+      
+    font-family: 'Vazirmatn', sans-serif;
+    
+      background: linear-gradient(to bottom right, #0f0f0f, #1a1a2e);
+      color: #eee;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
     }
     header {
       background-color: #111;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
-      font-size: 2rem;
-      color: crimson;
-      box-shadow: 0 2px 10px crimson;
+      font-size: 2.2rem;
+      color: #00ffff;
+      box-shadow: 0 4px 12px #00ffff44;
     }
     .container {
-      padding: 20px;
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    .social-links a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 25px;
+    }
+    .social-icons a {
+      font-size: 30px;
+      color: #eee;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #00ffff;
     }
     .search-box {
-      margin: 30px auto;
+      margin: 40px auto;
       max-width: 400px;
       display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00ffff55;
     }
     .search-box input {
       flex: 1;
-      padding: 10px;
+      padding: 12px;
       font-size: 16px;
+      border: none;
+      outline: none;
     }
     .search-box button {
-      padding: 10px;
-      background: crimson;
+      padding: 12px;
+      background: #00ffff;
       border: none;
-      color: white;
+      color: black;
+      font-weight: bold;
       cursor: pointer;
     }
     .game-area {
-      margin-top: 40px;
+      margin-top: 60px;
       text-align: center;
     }
     .jumpscare {
@@ -69,14 +90,15 @@
   </style>
 </head>
 <body>
-  <header>ابوالفضل قاسم‌دخت</header>
+  <header style="font-family: Orbitron, sans-serif;">ابوالفضل قاسم‌دخت</header>
   <div class="container">
-    <p>بازیکن فوتبال، طراح و تدوین‌گر</p>
-    <div class="social-links">
-      <a href="https://instagram.com/irtrol" target="_blank">اینستاگرام</a>
-      <a href="https://t.me/lrtrol" target="_blank">تلگرام</a>
-      <a href="https://github.com/irtroll/Abolfazl" target="_blank">گیت‌هاب</a>
-      <a href="https://rubika.ir/MrWrong" target="_blank">روبیکا</a>
+    <p style="text-align:center; font-size: 18px; font-family: Caveat, cursive;">بازیکن فوتبال، طراح و تدوین‌گر</p>
+
+    <div class="social-icons">
+      <a href="https://instagram.com/irtrol" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/lrtrol" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://github.com/irtroll/Abolfazl" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://rubika.ir/MrWrong" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Rubika-logo.png" alt="Rubika" style="width: 30px; vertical-align: middle;"></a>
     </div>
 
     <div class="search-box">
@@ -85,8 +107,8 @@
     </div>
 
     <div class="game-area">
-      <h2>بازی ترسناک شروع شد... هر کلیک یه راز!</h2>
-      <p>روی صفحه کلیک کن و ببین چی میشه!</p>
+      <h2 style="font-family: Orbitron, sans-serif;">کلیک کن و نترس...</h2>
+      <p>روی هر جای صفحه کلیک کنی، ممکنه یه چیز عجیب ببینی!</p>
     </div>
   </div>
 
